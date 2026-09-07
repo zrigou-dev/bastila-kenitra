@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(mkdir -p previews)",
+      "Bash(python3)"
+    ]
+  }
+}
