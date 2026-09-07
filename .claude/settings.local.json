@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:commons.wikimedia.org)",
       "Bash(mkdir -p previews)",
-      "Bash(python3)"
+      "Bash(python3)",
+      "Bash(NEXT_PUBLIC_SITE_URL=\"\" npm run build)"
     ]
   }
 }

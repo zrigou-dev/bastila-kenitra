@@ -13,7 +13,7 @@ export const PHONE_INTL = "212681988086";
 export const PHONE_TEL = "+212681988086";
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://bastila-kenitra.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://bastila-kenitra.vercel.app";
 
 export type Servings = 4 | 6 | 8 | 10 | 12;
 export const SERVINGS: readonly Servings[] = [4, 6, 8, 10, 12] as const;
