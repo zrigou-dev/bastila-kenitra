@@ -7,7 +7,6 @@ import { hrefFor } from "@/lib/i18n";
 import { PHONE_DISPLAY, PHONE_TEL, waLink } from "@/lib/business";
 import { CloseIcon, MenuIcon, PhoneIcon } from "./icons";
 import { WhatsAppButton } from "./WhatsAppButton";
-import { LangSwitcher } from "./LangSwitcher";
 
 export function MobileMenu({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
@@ -71,16 +70,15 @@ export function MobileMenu({ lang }: { lang: Lang }) {
             <WhatsAppButton href={waLink(t.waMessages.generic)} className="mt-5 w-full">
               {t.cta.order}
             </WhatsAppButton>
-            <div className="mt-4 flex items-center justify-between gap-3">
-              <a
-                href={`tel:${PHONE_TEL}`}
-                className="nums flex items-center gap-2 text-sm font-semibold text-muted"
-              >
-                <PhoneIcon className="h-4 w-4" />
-                {PHONE_DISPLAY}
-              </a>
-              <LangSwitcher lang={lang} />
-            </div>
+            {/* Le sélecteur de langue vit désormais dans le header (toujours visible) —
+                pas besoin de le dupliquer ici. */}
+            <a
+              href={`tel:${PHONE_TEL}`}
+              className="nums mt-4 flex items-center gap-2 text-sm font-semibold text-muted"
+            >
+              <PhoneIcon className="h-4 w-4" />
+              {PHONE_DISPLAY}
+            </a>
           </div>
         </div>
       ) : null}

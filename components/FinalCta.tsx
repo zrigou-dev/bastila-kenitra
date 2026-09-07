@@ -12,7 +12,7 @@ export function FinalCta({ lang }: { lang: Lang }) {
   return (
     <section
       aria-labelledby="cta-title"
-      className="grain relative isolate overflow-hidden bg-plum-950 py-24 text-cream-100 sm:py-28"
+      className="grain relative isolate overflow-hidden bg-plum-950 py-16 text-cream-100 sm:py-28"
     >
       <Image
         src={TEXTURE.src}

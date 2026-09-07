@@ -107,3 +107,20 @@ export function CheckIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function ShieldIcon(props: IconProps) {
+  return (
+    <svg {...base(props)} fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 3.5 19 6.3v5.4c0 4.4-2.9 7.9-7 9-4.1-1.1-7-4.6-7-9V6.3L12 3.5Z" />
+      <path d="m9 12 2.2 2.2L15.2 10" />
+    </svg>
+  );
+}
+
+export function SparkleIcon(props: IconProps) {
+  return (
+    <svg {...base(props)} fill="currentColor">
+      <path d="M12 2.5c.5 3.6 1.5 6 3.1 7.3 1.6 1.3 3.9 2 6.9 2.2-3 .2-5.3.9-6.9 2.2-1.6 1.3-2.6 3.7-3.1 7.3-.5-3.6-1.5-6-3.1-7.3-1.6-1.3-3.9-2-6.9-2.2 3-.2 5.3-.9 6.9-2.2 1.6-1.3 2.6-3.7 3.1-7.3Z" />
+    </svg>
+  );
+}

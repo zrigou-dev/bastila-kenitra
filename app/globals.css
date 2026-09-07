@@ -91,7 +91,8 @@
   .btn {
     @apply relative inline-flex select-none items-center justify-center gap-2.5 overflow-hidden rounded-full
            text-[0.95rem] font-semibold leading-none
-           transition-[transform,box-shadow,background-color,color,border-color] duration-200 ease-out;
+           transition-[transform,box-shadow,background-color,color,border-color] duration-200 ease-out
+           active:scale-[0.97];
     min-height: 54px;
     padding-inline: 1.7rem;
   }
@@ -110,7 +111,10 @@
       0 18px 38px -14px rgba(168, 127, 38, 0.85);
   }
   .btn-gold:active {
-    @apply translate-y-0;
+    /* Combine le retour de l'effet de survol et le retrait tactile de .btn:active
+       (translate + scale sur la même propriété transform : l'un ne doit pas
+       écraser l'autre). */
+    transform: translateY(0) scale(0.97);
   }
   /* Reflet qui balaie le bouton au survol */
   .btn-gold::after {
@@ -124,6 +128,12 @@
   .btn-gold:hover::after {
     transform: translateX(130%);
     transition: transform 0.75s ease;
+  }
+
+  /* Halo doré respirant — attire l'œil vers l'action principale sans geste de
+     l'utilisateur (utile sur tactile, où :hover ne se déclenche jamais). */
+  .pulse-glow {
+    animation: pulse-glow 2.6s ease-in-out infinite;
   }
 
   .btn-outline-gold {
@@ -245,6 +255,20 @@
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.45) inset,
+      0 12px 30px -12px rgba(168, 127, 38, 0.75);
+  }
+  50% {
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.55) inset,
+      0 14px 34px -8px rgba(201, 162, 74, 0.95);
   }
 }
 

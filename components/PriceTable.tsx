@@ -12,7 +12,7 @@ export function PriceTable({ lang }: { lang: Lang }) {
   const unit = isAr ? "درهم" : "dh";
 
   return (
-    <section id="tarifs" className="grain relative isolate overflow-hidden bg-plum-900 py-20 text-cream-100 sm:py-24">
+    <section id="tarifs" className="grain relative isolate overflow-hidden bg-plum-900 py-14 text-cream-100 sm:py-24">
       <div aria-hidden="true" className="pattern absolute inset-0 opacity-[0.05]" />
       <div
         aria-hidden="true"

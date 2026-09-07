@@ -16,7 +16,7 @@ export function OrderPreview({ lang }: { lang: Lang }) {
   const message = t.preview.message(name, servings, price);
 
   return (
-    <section aria-labelledby="preview-title" className="bg-cream-100 py-20 sm:py-24">
+    <section aria-labelledby="preview-title" className="bg-cream-100 py-14 sm:py-24">
       <div className="wrap grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <div className="reveal order-2 lg:order-1">
           {/* Maquette de conversation — illustration, pas une vraie capture */}

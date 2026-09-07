@@ -8,7 +8,7 @@ export function HowToOrder({ lang }: { lang: Lang }) {
   const t = getContent(lang);
 
   return (
-    <section id="commander" className="bg-cream-100 py-20 sm:py-24">
+    <section id="commander" className="bg-cream-100 py-14 sm:py-24">
       <div className="wrap">
         <div className="reveal mx-auto max-w-2xl text-center">
           <p className="eyebrow text-gold-700">{t.how.eyebrow}</p>

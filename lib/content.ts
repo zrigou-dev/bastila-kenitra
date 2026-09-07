@@ -40,6 +40,7 @@ export type Content = {
     eyebrow: string;
     title: string;
     intro: string;
+    swipeHint: string;
     servingsLegend: string;
     perPerson: (servings: number, unit: number) => string;
     orderAria: (name: string, servings: number) => string;
@@ -147,6 +148,7 @@ const ar: Content = {
     eyebrow: "نوعان · خمسة أحجام",
     title: "بسطيلاتنا",
     intro: "كل بسطيلة تُحضَّر وتُخبز عند الطلب. اختر النوع وعدد الأشخاص: الثمن يظهر لك مباشرة، ورسالة واتساب تكون جاهزة.",
+    swipeHint: "مرّري لتكتشفي الوصفة الأخرى",
     servingsLegend: "لكم شخص؟",
     perPerson: (servings, unit) => `${servings} أشخاص · حوالي ${unit} درهم للشخص`,
     orderAria: (name, servings) => `اطلب عبر واتساب — ${name} لـ ${servings} أشخاص`,
@@ -333,6 +335,7 @@ const fr: Content = {
     eyebrow: "Deux recettes · cinq formats",
     title: "Nos bastilas",
     intro: "Chaque bastila est montée et dorée à la commande. Choisissez la recette et le nombre de convives : le prix s'affiche, et votre message WhatsApp est déjà prêt.",
+    swipeHint: "Faites glisser pour voir l'autre recette",
     servingsLegend: "Pour combien de personnes ?",
     perPerson: (servings, unit) => `${servings} personnes · environ ${unit} dh par personne`,
     orderAria: (name, servings) => `Commander sur WhatsApp — ${name}, ${servings} personnes`,

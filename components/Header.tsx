@@ -35,9 +35,7 @@ export function Header({ lang }: { lang: Lang }) {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="hidden sm:block">
-            <LangSwitcher lang={lang} />
-          </div>
+          <LangSwitcher lang={lang} compactOnMobile />
           <WhatsAppButton
             href={waLink(t.waMessages.generic)}
             className="hidden !min-h-[44px] !px-5 !text-[0.85rem] sm:inline-flex"

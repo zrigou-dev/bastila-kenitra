@@ -29,8 +29,11 @@ export function Hero({ lang }: { lang: Lang }) {
         className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,4,16,0.35),transparent_28%,transparent_70%,rgba(10,4,16,0.55))]"
       />
 
-      <div className="wrap relative grid items-center gap-10 pb-16 pt-10 sm:gap-12 sm:pb-20 sm:pt-14 lg:grid-cols-[1fr_0.92fr] lg:gap-14 lg:pb-24 lg:pt-20">
-        <div className="max-w-xl">
+      <div className="wrap relative grid items-center gap-7 pb-12 pt-6 sm:gap-12 sm:pb-20 sm:pt-14 lg:grid-cols-[1fr_0.92fr] lg:gap-14 lg:pb-24 lg:pt-20">
+        {/* Sur mobile, la photo passe avant le texte dans l'ordre visuel : on veut
+            que l'appétit précède l'argumentaire. L'ordre de lecture (DOM) ne change
+            pas — le h1 reste premier pour l'accessibilité et le SEO. */}
+        <div className="order-2 max-w-xl lg:order-1">
           <p className="eyebrow flex items-center gap-3 text-gold-400">
             <span aria-hidden="true" className="h-px w-8 shrink-0 bg-gold-500/70" />
             {t.hero.eyebrow}
@@ -38,17 +41,17 @@ export function Hero({ lang }: { lang: Lang }) {
 
           <h1
             id="hero-title"
-            className={`h-display mt-4 text-balance text-cream-100 sm:mt-5 ${
+            className={`h-display mt-3 text-balance text-cream-100 sm:mt-5 ${
               isAr
-                ? "text-[2.1rem] sm:text-[3.1rem] lg:text-[3.6rem]"
-                : "text-[2.45rem] sm:text-6xl lg:text-[4.15rem]"
+                ? "text-[1.85rem] sm:text-[3.1rem] lg:text-[3.6rem]"
+                : "text-[2.15rem] sm:text-6xl lg:text-[4.15rem]"
             }`}
           >
             {t.hero.titleLead}{" "}
             <em className="not-italic text-gold-300">{t.hero.titleAccent}</em>
           </h1>
 
-          <p className="mt-4 max-w-[34rem] text-pretty text-[1rem] leading-relaxed text-cream-200/85 sm:mt-5 sm:text-[1.05rem]">
+          <p className="mt-3 max-w-[34rem] text-pretty text-[0.98rem] leading-relaxed text-cream-200/85 sm:mt-5 sm:text-[1.05rem]">
             {t.hero.lede}{" "}
             <span className="nums whitespace-nowrap font-semibold text-cream-100">
               {t.hero.fromPrice} {MIN_PRICE} {isAr ? "درهم" : "dh"}
@@ -56,8 +59,8 @@ export function Hero({ lang }: { lang: Lang }) {
             .
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center">
-            <WhatsAppButton href={waLink(t.waMessages.generic)} className="w-full sm:w-auto">
+          <div className="mt-5 flex flex-col gap-2.5 sm:mt-8 sm:flex-row sm:items-center sm:gap-3">
+            <WhatsAppButton href={waLink(t.waMessages.generic)} className="pulse-glow w-full sm:w-auto">
               {t.cta.order}
             </WhatsAppButton>
             <a href={hrefFor(lang, "#tarifs")} className="btn-outline-gold w-full sm:w-auto">
@@ -66,14 +69,14 @@ export function Hero({ lang }: { lang: Lang }) {
             </a>
           </div>
 
-          <p className="mt-5 flex items-start gap-2.5 text-[0.86rem] leading-snug text-cream-200/70">
+          <p className="mt-4 flex items-start gap-2.5 text-[0.86rem] leading-snug text-cream-200/70 sm:mt-5">
             <span aria-hidden="true" className="relative mt-1.5 flex h-2 w-2 shrink-0">
               <span className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-70" />
             </span>
             {t.hero.responseNote}
           </p>
 
-          <ul className="mt-7 flex flex-wrap gap-x-6 gap-y-3 border-t border-gold-500/20 pt-5 sm:mt-9 sm:pt-6">
+          <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2.5 border-t border-gold-500/20 pt-4 sm:mt-9 sm:gap-y-3 sm:pt-6">
             {t.hero.points.map((label, i) => {
               const Icon = ICONS[i];
               return (
@@ -88,7 +91,7 @@ export function Hero({ lang }: { lang: Lang }) {
 
         {/* La photo est présentée en arche, comme une porte marocaine : le plat
             occupe le bas du cadre, la courbe dégage la tête de la composition. */}
-        <div className="relative mx-auto w-full max-w-[23rem] sm:max-w-[27rem] lg:max-w-[30rem]">
+        <div className="order-1 relative mx-auto w-full max-w-[24rem] sm:max-w-[27rem] lg:order-2 lg:max-w-[30rem]">
           <div
             aria-hidden="true"
             className="absolute -inset-6 bg-[radial-gradient(circle_at_50%_45%,rgba(224,192,117,0.28),transparent_65%)]"
@@ -122,13 +125,16 @@ export function Hero({ lang }: { lang: Lang }) {
             </div>
           </div>
 
-          <div className="absolute -bottom-4 start-0 rounded-2xl border border-gold-500/35 bg-plum-950/90 px-5 py-3 shadow-lift backdrop-blur-sm sm:-start-4 sm:px-6 sm:py-3.5">
+          {/* Le badge reste dans le cadre sur mobile (la photo est empilée juste
+              au-dessus du texte, pas de place pour déborder) ; il ne déborde du
+              cadre qu'à partir de lg, où la photo respire à côté du texte. */}
+          <div className="absolute bottom-3 start-3 rounded-2xl border border-gold-500/35 bg-plum-950/90 px-4 py-2.5 shadow-lift backdrop-blur-sm sm:bottom-4 sm:start-4 sm:px-5 sm:py-3 lg:-bottom-4 lg:-start-4 lg:px-6 lg:py-3.5">
             <p className="eyebrow text-gold-500">{t.hero.badgeLabel}</p>
-            <p className="nums font-display text-3xl font-semibold leading-none text-gold-200 sm:text-[2.2rem]">
-              {MIN_PRICE} <span className="text-xl">{isAr ? "درهم" : "dh"}</span>
+            <p className="nums font-display text-[1.65rem] font-semibold leading-none text-gold-200 sm:text-3xl lg:text-[2.2rem]">
+              {MIN_PRICE} <span className="text-lg sm:text-xl">{isAr ? "درهم" : "dh"}</span>
             </p>
-            <p className="mt-1 text-[0.72rem] text-cream-200/70">{t.hero.badgeNote}</p>
-            <p className="nums mt-1.5 border-t border-gold-500/20 pt-1.5 text-[0.7rem] text-gold-400/90">
+            <p className="mt-1 text-[0.68rem] text-cream-200/70 sm:text-[0.72rem]">{t.hero.badgeNote}</p>
+            <p className="nums mt-1.5 border-t border-gold-500/20 pt-1.5 text-[0.68rem] text-gold-400/90 sm:text-[0.7rem]">
               {t.products.perPerson(4, pricePerPerson(MIN_PRICE, 4))}
             </p>
           </div>

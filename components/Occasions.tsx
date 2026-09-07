@@ -9,7 +9,7 @@ export function Occasions({ lang }: { lang: Lang }) {
   const inset = PHOTOS.poulet.detail;
 
   return (
-    <section aria-labelledby="occasions-title" className="bg-cream-50 py-20 sm:py-24">
+    <section aria-labelledby="occasions-title" className="bg-cream-50 py-14 sm:py-24">
       <div className="wrap grid items-center gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
         <div className="reveal relative order-2 pb-14 sm:pb-16 lg:order-1">
           <div className="photo-frame ms-auto w-[86%] rounded-[1.6rem] bg-plum-900 shadow-lift sm:w-[80%] lg:w-[84%]">
