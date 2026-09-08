@@ -4,7 +4,7 @@
  * المصدر الوحيد للمعلومات: الملصق الذي قدّمه صاحب المشروع (info.jpeg)
  */
 
-export const BRAND_LATIN = "Bastila Kénitra";
+export const BRAND_LATIN = "pastilla Kénitra";
 export const BRAND_AR = "بسطيلة القنيطرة";
 
 /** 06 81 98 80 86 → format international marocain */
@@ -13,7 +13,7 @@ export const PHONE_INTL = "212681988086";
 export const PHONE_TEL = "+212681988086";
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://bastila-kenitra.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://pastilla-kenitra.vercel.app";
 
 export type Servings = 4 | 6 | 8 | 10 | 12;
 export const SERVINGS: readonly Servings[] = [4, 6, 8, 10, 12] as const;
@@ -38,14 +38,14 @@ const photo = (src: string, width: number, height: number): Photo => ({ src, wid
  */
 export const PHOTOS: Record<VariantId, { portrait: Photo; square: Photo; detail: Photo }> = {
   poulet: {
-    portrait: photo("/images/bastila-poulet.jpg", 1440, 1800),
-    square: photo("/images/bastila-poulet-square.jpg", 1400, 1400),
-    detail: photo("/images/bastila-poulet-detail.jpg", 1500, 1000),
+    portrait: photo("/images/pastilla-poulet.jpg", 1440, 1800),
+    square: photo("/images/pastilla-poulet-square.jpg", 1400, 1400),
+    detail: photo("/images/pastilla-poulet-detail.jpg", 1500, 1000),
   },
   poisson: {
-    portrait: photo("/images/bastila-poisson.jpg", 1440, 1800),
-    square: photo("/images/bastila-poisson-square.jpg", 1400, 1400),
-    detail: photo("/images/bastila-poisson-detail.jpg", 1500, 1000),
+    portrait: photo("/images/pastilla-poisson.jpg", 1440, 1800),
+    square: photo("/images/pastilla-poisson-square.jpg", 1400, 1400),
+    detail: photo("/images/pastilla-poisson-detail.jpg", 1500, 1000),
   },
 };
 

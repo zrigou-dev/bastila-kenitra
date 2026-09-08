@@ -26,11 +26,15 @@
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
     -webkit-text-size-adjust: 100%;
+    /* Sur html, pas sur body : Safari iOS traite position:fixed comme un simple
+       absolute (l'élément défile avec la page) dès que body porte un overflow
+       autre que visible — c'est ce qui empêche la barre WhatsApp de rester
+       épinglée en bas sur iPhone. */
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-cream-50 font-sans text-ink antialiased;
-    overflow-x: hidden;
     text-rendering: optimizeLegibility;
   }
 

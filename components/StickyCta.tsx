@@ -9,7 +9,7 @@ export function StickyCta({ lang }: { lang: Lang }) {
   const t = getContent(lang);
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold-500/25 bg-plum-950/95 px-4 py-3 shadow-[0_-10px_28px_rgba(10,4,16,0.35)] backdrop-blur-md sm:hidden">
+    <div className="safe-bottom fixed inset-x-0 bottom-0 z-40 border-t border-gold-500/25 bg-plum-950/95 px-4 py-3 shadow-[0_-10px_28px_rgba(10,4,16,0.35)] backdrop-blur-md sm:hidden">
       <div className="flex items-center gap-2.5">
         <a
           href={`tel:${PHONE_TEL}`}

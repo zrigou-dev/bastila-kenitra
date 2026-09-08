@@ -1,6 +1,6 @@
-# Bastila Kénitra — site vitrine / موقع بسطيلة القنيطرة
+# pastilla Kénitra — site vitrine / موقع بسطيلة القنيطرة
 
-Landing page bilingue **arabe (par défaut) / français** pour une activité de bastilas
+Landing page bilingue **arabe (par défaut) / français** pour une activité de pastillas
 faites maison à Kénitra. Site 100 % statique, sans backend : la seule action externe
 est l'ouverture de WhatsApp.
 
@@ -23,7 +23,7 @@ npm run lint
 2. Sur Vercel : **New Project** → importer le dépôt. Le framework Next.js est détecté,
    aucune configuration supplémentaire n'est nécessaire.
 3. Ajouter la variable d'environnement `NEXT_PUBLIC_SITE_URL` avec le domaine final
-   (ex. `https://bastila-kenitra.ma`). Elle alimente les balises canoniques,
+   (ex. `https://pastilla-kenitra.ma`). Elle alimente les balises canoniques,
    l'Open Graph, les `hreflang` et le `sitemap.xml`.
 4. Déployer.
 
@@ -37,8 +37,8 @@ Les deux photos originales du produit vivent dans **`assets/originals/`** (hors 
 dossier servi) :
 
 ```
-assets/originals/bastila-poulet.jpg     # la classique — sucre glace, amandes, briouates
-assets/originals/bastila-poisson.jpg    # la marine — crevettes, citron, sur plateau
+assets/originals/pastilla-poulet.jpg     # la classique — sucre glace, amandes, briouates
+assets/originals/pastilla-poisson.jpg    # la marine — crevettes, citron, sur plateau
 ```
 
 `python3 tools/build-images.py` en dérive tous les visuels du site et les écrit dans
@@ -46,9 +46,9 @@ assets/originals/bastila-poisson.jpg    # la marine — crevettes, citron, sur p
 
 | Fichier | Format | Où il sert |
 |---|---|---|
-| `bastila-<recette>.jpg` | portrait 4:5 | héros (en arche), section « occasions » |
-| `bastila-<recette>-square.jpg` | carré | cartes produits, données structurées |
-| `bastila-<recette>-detail.jpg` | 3:2 | bandeau de gros plans, médaillon |
+| `pastilla-<recette>.jpg` | portrait 4:5 | héros (en arche), section « occasions » |
+| `pastilla-<recette>-square.jpg` | carré | cartes produits, données structurées |
+| `pastilla-<recette>-detail.jpg` | 3:2 | bandeau de gros plans, médaillon |
 | `texture-warm.jpg` | 16:9 flouté | fond du bloc final |
 | `og.jpg` | 1200 × 630 | image de partage (les deux recettes côte à côte) |
 
@@ -75,7 +75,7 @@ ajuster `CENTER` et `CROPS` en tête du script avant de relancer.
 | Lumière | Près d'une fenêtre, en journée, **sans flash** et sans éclairage jaune de plafond |
 | Fond | Nappe unie sombre, bois, ou plateau en cuivre — rien de chargé |
 | Angles | 1 vue du dessus, 1 vue à 45°, 1 gros plan sur la croûte et les amandes |
-| Moment | Bastila **juste sortie du four**, encore brillante |
+| Moment | pastilla **juste sortie du four**, encore brillante |
 | La part | 1 photo avec une part coupée : on doit voir la garniture — c'est **la** photo qui fait vendre |
 | Format | Photo verticale, plat centré, au moins 2000 px de large |
 
@@ -140,4 +140,4 @@ tools/build-images.py  génère public/images/* et public/og.jpg
 Aucun témoignage, aucune note, aucun badge de certification, aucun délai de livraison
 chiffré, aucune composition d'ingrédients détaillée. Rien de tout cela n'est documenté. Pour en ajouter, il faut d'abord que ce soit vrai — et le dire dans
 `lib/content.ts`.
-# -bastila-kenitra
+# -pastilla-kenitra

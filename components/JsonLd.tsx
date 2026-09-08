@@ -15,6 +15,13 @@ import {
 
 const VARIANTS: VariantId[] = ["poulet", "poisson"];
 
+/** Orthographe alternative largement utilisée — aide les moteurs à relier les
+ * recherches « pastilla » à ce commerce, sans rien inventer sur le fond. */
+const PASTILLA_NAME: Record<VariantId, string> = {
+  poulet: "Pastilla au poulet",
+  poisson: "Pastilla au poisson",
+};
+
 /**
  * Données structurées Schema.org.
  * Uniquement des informations vérifiables (affiche du commerçant) :
@@ -22,7 +29,7 @@ const VARIANTS: VariantId[] = ["poulet", "poisson"];
  */
 export function JsonLd({ lang }: { lang: Lang }) {
   const t = getContent(lang);
-  const businessId = `${SITE_URL}/#bastila-kenitra`;
+  const businessId = `${SITE_URL}/#pastilla-kenitra`;
   const pageUrl = `${SITE_URL}${pathFor(lang)}`.replace(/\/$/, "") || SITE_URL;
   const city = lang === "ar" ? "القنيطرة" : "Kénitra";
 
@@ -31,7 +38,7 @@ export function JsonLd({ lang }: { lang: Lang }) {
       "@type": "FoodEstablishment",
       "@id": businessId,
       name: BRAND_LATIN,
-      alternateName: t.brand,
+      alternateName: [t.brand, "Pastilla Kénitra"],
       description: t.metaDescription,
       url: SITE_URL,
       image: `${SITE_URL}${PHOTOS.poulet.square.src}`,
@@ -65,6 +72,7 @@ export function JsonLd({ lang }: { lang: Lang }) {
       "@type": "Product",
       "@id": `${pageUrl}#${v}`,
       name: t.products.items[v].name,
+      alternateName: PASTILLA_NAME[v],
       description: t.products.items[v].description,
       image: `${SITE_URL}${PHOTOS[v].square.src}`,
       brand: { "@type": "Brand", name: BRAND_LATIN },

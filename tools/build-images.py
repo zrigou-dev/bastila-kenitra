@@ -4,7 +4,7 @@ Prépare les visuels du site à partir des photos originales.
 
     python3 tools/build-images.py
 
-Source  : assets/originals/bastila-poulet.jpg, assets/originals/bastila-poisson.jpg
+Source  : assets/originals/pastilla-poulet.jpg, assets/originals/pastilla-poisson.jpg
           (photos verticales, plat centré)
 Sortie  : public/images/*.jpg  +  public/og.jpg
 
@@ -75,13 +75,13 @@ def finish(im: Image.Image, width: int, height: int) -> Image.Image:
 
 
 def build_variant(name: str) -> dict[str, tuple[int, int]]:
-    src = Image.open(SRC / f"bastila-{name}.jpg").convert("RGB")
+    src = Image.open(SRC / f"pastilla-{name}.jpg").convert("RGB")
     sizes = {}
     for suffix, (ratio, width, zoom, dy) in CROPS.items():
         height = round(width / ratio)
         box = crop_box(src.size, CENTER[name], ratio, zoom, dy)
         out = finish(src.crop(box), width, height)
-        rel = f"/images/bastila-{name}{suffix}.jpg"
+        rel = f"/images/pastilla-{name}{suffix}.jpg"
         out.save(OUT / Path(rel).name, **JPEG)
         sizes[rel] = (width, height)
     return sizes
@@ -89,7 +89,7 @@ def build_variant(name: str) -> dict[str, tuple[int, int]]:
 
 def build_texture(width=1600, height=900) -> dict[str, tuple[int, int]]:
     """Fond du bloc final : croûte dorée, floutée et assombrie — jamais lisible comme photo."""
-    src = Image.open(SRC / "bastila-poisson.jpg").convert("RGB")
+    src = Image.open(SRC / "pastilla-poisson.jpg").convert("RGB")
     box = crop_box(src.size, CENTER["poisson"], width / height, 0.99, 0.0)
     im = src.crop(box).resize((width, height), Image.LANCZOS)
     im = im.filter(ImageFilter.GaussianBlur(radius=26))
@@ -100,12 +100,12 @@ def build_texture(width=1600, height=900) -> dict[str, tuple[int, int]]:
 
 
 def build_og(width=1200, height=630):
-    """Image de partage : les deux bastilas côte à côte, séparées par un filet or."""
+    """Image de partage : les deux pastillas côte à côte, séparées par un filet or."""
     gap = 4
     panel = ((width - gap) // 2, height)
     canvas = Image.new("RGB", (width, height), (201, 162, 74))
     for i, name in enumerate(("poulet", "poisson")):
-        src = Image.open(SRC / f"bastila-{name}.jpg").convert("RGB")
+        src = Image.open(SRC / f"pastilla-{name}.jpg").convert("RGB")
         box = crop_box(src.size, CENTER[name], panel[0] / panel[1], 0.90, 0.0)
         im = finish(src.crop(box), *panel)
         canvas.paste(im, (i * (panel[0] + gap), 0))

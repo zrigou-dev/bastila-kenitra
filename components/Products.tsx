@@ -8,7 +8,7 @@ export function Products({ lang }: { lang: Lang }) {
   const t = getContent(lang);
 
   return (
-    <section id="bastilas" className="bg-cream-50 py-14 sm:py-24">
+    <section id="pastillas" className="bg-cream-50 py-14 sm:py-24">
       <div className="wrap">
         <div className="reveal mx-auto max-w-2xl text-center">
           <p className="eyebrow text-gold-700">{t.products.eyebrow}</p>
