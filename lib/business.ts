@@ -38,14 +38,14 @@ const photo = (src: string, width: number, height: number): Photo => ({ src, wid
  */
 export const PHOTOS: Record<VariantId, { portrait: Photo; square: Photo; detail: Photo }> = {
   poulet: {
-    portrait: photo("/images/pastilla-poulet.jpg", 1440, 1800),
-    square: photo("/images/pastilla-poulet-square.jpg", 1400, 1400),
-    detail: photo("/images/pastilla-poulet-detail.jpg", 1500, 1000),
+    portrait: photo("/images/bastila-poulet.jpg", 1440, 1800),
+    square: photo("/images/bastila-poulet-square.jpg", 1400, 1400),
+    detail: photo("/images/bastila-poulet-detail.jpg", 1500, 1000),
   },
   poisson: {
-    portrait: photo("/images/pastilla-poisson.jpg", 1440, 1800),
-    square: photo("/images/pastilla-poisson-square.jpg", 1400, 1400),
-    detail: photo("/images/pastilla-poisson-detail.jpg", 1500, 1000),
+    portrait: photo("/images/bastila-poisson.jpg", 1440, 1800),
+    square: photo("/images/bastila-poisson-square.jpg", 1400, 1400),
+    detail: photo("/images/bastila-poisson-detail.jpg", 1500, 1000),
   },
 };
 

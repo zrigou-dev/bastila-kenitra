@@ -74,10 +74,10 @@ export function MobileMenu({ lang }: { lang: Lang }) {
                 pas besoin de le dupliquer ici. */}
             <a
               href={`tel:${PHONE_TEL}`}
-              className="nums mt-4 flex items-center gap-2 text-sm font-semibold text-muted"
+              className="mt-4 flex items-center gap-2 text-sm font-semibold text-muted"
             >
               <PhoneIcon className="h-4 w-4" />
-              {PHONE_DISPLAY}
+              <span className="nums-ltr">{PHONE_DISPLAY}</span>
             </a>
           </div>
         </div>

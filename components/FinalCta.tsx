@@ -49,7 +49,7 @@ export function FinalCta({ lang }: { lang: Lang }) {
           >
             <PhoneIcon className="h-4 w-4 text-gold-500" />
             <span>
-              {t.finalCta.orCall} <span className="nums">{PHONE_DISPLAY}</span>
+              {t.finalCta.orCall} <span className="nums-ltr">{PHONE_DISPLAY}</span>
             </span>
           </a>
         </div>

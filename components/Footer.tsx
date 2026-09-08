@@ -42,15 +42,15 @@ export function Footer({ lang }: { lang: Lang }) {
                   href={waLink(t.waMessages.generic)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="nums inline-flex items-center gap-2.5 font-display text-2xl font-semibold text-gold-200 transition-colors hover:text-gold-300"
+                  className="inline-flex items-center gap-2.5 font-display text-2xl font-semibold text-gold-200 transition-colors hover:text-gold-300"
                 >
                   <WhatsAppIcon className="h-5 w-5" />
-                  {PHONE_DISPLAY}
+                  <span className="nums-ltr">{PHONE_DISPLAY}</span>
                 </a>
               </li>
               <li>
                 <a href={`tel:${PHONE_TEL}`} className="text-[0.92rem] transition-colors hover:text-gold-300">
-                  {t.footer.callLabel} <span className="nums">{PHONE_DISPLAY}</span>
+                  {t.footer.callLabel} <span className="nums-ltr">{PHONE_DISPLAY}</span>
                 </a>
               </li>
               <li className="flex items-center gap-2 text-[0.92rem]">
